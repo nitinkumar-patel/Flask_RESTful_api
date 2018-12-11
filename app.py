@@ -17,7 +17,11 @@ api = Api(app)
 
 @app.before_first_request
 def create_tables():
+    app = Flask(__name__)
+    db.init_app()
+    db.app = app
     db.create_all()
+    return app
 
 
 jwt = JWT(app, authenticate, identity)  # /auth
