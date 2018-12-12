@@ -5,3 +5,4 @@ __pycache__/
 *.db
 .vscode/*
 *.db_back
+app_back/* 
